@@ -1,0 +1,41 @@
+package Mint;
+
+public class Loonie extends Coin {
+	  
+	  private double denomination=1.0;
+	  private int quantity;
+	  
+	  public Loonie() {
+		  super();
+		  super.lifeSpan = 60;
+		  quantity = 10000;
+		  super.getQuantity();
+		  super.getDenomination();
+	  }
+	  
+	  public Loonie(int life, int quan) { 
+		super();
+		super.lifeSpan=life;
+	    quantity=quan;
+	  }
+
+
+	  
+	  public String toString()
+	  {
+	    String output="Loonies: \n";
+	    output+="  Life Span: "+lifeSpan+" years \n";
+	    super.toString();
+	    output+="  Value: $"+denomination*quantity+"\n";
+	    return output;
+	  }
+	  
+	  public int getQuantity() {
+		  return quantity;
+	  }
+	  
+	  public double getDenomination() {
+		  return denomination;
+	  }
+	  
+	}
