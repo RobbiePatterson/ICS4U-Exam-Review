@@ -1,0 +1,86 @@
+package REVIEW04pat;
+
+import java.util.Scanner;
+
+public class REVIEW04pat {
+	
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int bunnies, lines;
+		String ears[];
+
+		
+		System.out.println("Please enter how many lines of bunnies there are:");
+		lines = sc.nextInt();
+		
+		 ears = new String[lines];
+		
+		for(int i=0; i<lines; i++) {
+			System.out.println("Please enter the number of bunnies in line #" + (i+1) + ":");
+			bunnies = sc.nextInt();
+			
+			ears[i] = Integer.toString(countEars(bunnies));
+		}
+		
+		
+		selectionSort(ears);
+		
+		
+		for(int i=0; i<lines; i++) {
+			System.out.println("There are " + ears[i] + " bunny ears in line #" + (i+1) + ".");
+		}
+	}
+	
+	  public static void selectionSort(String s[]) {
+		    int smallest;
+		    for (int i = 0; i < s.length - 1; i++) {
+		      smallest = i;
+		      //see if there is a smaller number further in the array
+		      for (int index = i + 1; index < s.length; index++) {
+		        if (compareTo(s[i], Integer.toString(index))) {
+		          swap(s, smallest, index);
+		        }
+		      }
+		    }
+		  }
+
+		  public static void swap(String array2[], int first, int second) {
+		    String hold = array2[first];
+		    array2[first] = array2[second];
+		    array2[second] = hold;
+		  }
+		
+	
+	public static boolean compareTo(String s, String s1) {
+		if(s.compareTo(s1) == 0) { // Two words are the same
+			//Stays in same order
+			return false;
+			
+		}
+		else if(s.compareTo(s1) < 0) { // First word comes before second
+			//Stays in same order
+			return false;
+		}
+		else if(s.compareTo(s1) > 0) { // First word comes after second
+			return true;
+				}
+		return false;
+	}
+
+	
+	public static int countEars(int e) {
+		if(e == 0) {
+			return 0;
+		} 
+		else if(e%2 == 0) {
+			return countEars(e-1)+3;
+		}
+		else if(e%2 == 1) {
+			return countEars(e-1)+2;
+		}
+		return e;
+		
+	}
+
+}
+
