@@ -1,0 +1,38 @@
+package REVIEW01pat;
+
+import java.util.Scanner;
+
+public class REVIEW01pat {
+	
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int bunnies;
+		String ears;
+		
+		
+		System.out.println("Please enter the number of bunnies in a line:");
+		bunnies = sc.nextInt();
+		
+		ears = Integer.toString(countEars(bunnies));
+		
+		System.out.println("There are " + ears + " bunny ears in your line of bunnies.");
+		
+		
+	}
+	
+	
+	public static int countEars(int e) {
+		if(e == 0) {
+			return 0;
+		} 
+		else if(e%2 == 0) {
+			return countEars(e-1)+3;
+		}
+		else if(e%2 == 1) {
+			return countEars(e-1)+2;
+		}
+		return e;
+		
+	}
+
+}
