@@ -1,0 +1,28 @@
+package Mint;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Mint {
+  public static void main(String[] args) { 
+    ArrayList<Mintage> mintages=new ArrayList<Mintage>();
+    int count,year;
+    Scanner input=new Scanner(System.in);
+    System.out.println("How many mintages would you like to enter?");
+    count=input.nextInt();
+    
+    for (int i=0; i<count;i++)
+    {
+      System.out.println("What year is mintage "+(i+1)+"?");
+      year=input.nextInt();
+      mintages.add(new Mintage(year));
+      System.out.println("");
+    }
+    
+    for (int i=0; i<mintages.size();i++)
+    {
+      System.out.println(mintages.get(i));
+      
+    }
+  }
+}
