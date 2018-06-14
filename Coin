@@ -1,0 +1,26 @@
+package Mint;
+
+public class Coin {
+
+	public int lifeSpan;
+	int quantity;
+	int denomination;
+	
+	 public Coin() {
+		lifeSpan = 60;
+	  }
+	 
+	  public String toString()
+	  {
+	    String output="Toonies: \n";
+	    output+="  Life Span: "+lifeSpan+" years \n";
+	    return output;
+	  }
+	  public int getQuantity() {
+		  return quantity;
+	  }
+	  
+	  public double getDenomination() {
+		  return denomination;
+	  }
+}
