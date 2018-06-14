@@ -1,0 +1,41 @@
+package Mint;
+
+public class Dime extends Coin {
+	  
+	  private double denomination= 0.10;
+	  private int quantity;
+	  
+	  public Dime() {
+		  super();
+		  super.lifeSpan = 60;
+		  quantity = 10000;
+		  super.getQuantity();
+		  super.getDenomination();
+	  }
+	  
+	  public Dime(int life, int quan) { 
+		super();
+		super.lifeSpan=life;
+	    quantity=quan;
+	  }
+
+
+	  
+	  public String toString()
+	  {
+	    String output="Dimes: \n";
+	    output+="  Life Span: "+lifeSpan+" years \n";
+	    super.toString();
+	    output+="  Value: $"+denomination*quantity+"\n";
+	    return output;
+	  }
+	  
+	  public int getQuantity() {
+		  return quantity;
+	  }
+	  
+	  public double getDenomination() {
+		  return denomination;
+	  }
+	  
+	}
