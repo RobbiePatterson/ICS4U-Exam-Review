@@ -1,0 +1,41 @@
+package Mint;
+
+public class Nickel extends Coin{
+	  
+	  private double denomination=0.05;
+	  private int quantity;
+	  
+	  public Nickel() {
+		  super();
+		  super.lifeSpan = 60;
+		  quantity = 10000;
+		  super.getQuantity();
+		  super.getDenomination();
+	  }
+	  
+	  public Nickel(int life, int quan) { 
+		super();
+		super.lifeSpan=life;
+	    quantity=quan;
+	  }
+
+
+	  
+	  public String toString()
+	  {
+	    String output="Nickels: \n";
+	    output+="  Life Span: "+lifeSpan+" years \n";
+	    super.toString();
+	    output+="  Value: $"+denomination*quantity+"\n";
+	    return output;
+	  }
+	  
+	  public int getQuantity() {
+		  return quantity;
+	  }
+	  
+	  public double getDenomination() {
+		  return denomination;
+	  }
+	  
+	}
